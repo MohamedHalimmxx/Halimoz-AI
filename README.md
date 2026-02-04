@@ -1,4 +1,4 @@
-Halimoz AI Video Intelligence Summarizer
+## Halimoz AI Video Intelligence Summarizer
 A multi-agent AI system for understanding, summarizing, and documenting video content using natural language.
 
 Overview
