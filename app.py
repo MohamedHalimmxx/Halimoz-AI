@@ -12,7 +12,7 @@ st.title("HALIMOZ AI")
 
 
 loading_texts = [
-    "Halimoz is analyzing the video...",
+    "Halimoz is working on the video...",
     "Extracting key insights...",
     "Processing the script...",
     "Generating the summary...",
@@ -57,10 +57,47 @@ if summarize:
             with ThreadPoolExecutor() as executor:
                 future = executor.submit(run_crew, video_url)
                 
+                
                 # for loading animation
                 for msg in itertools.cycle(loading_texts):
-                    status_text.markdown(f"<h3 style='text-align: center; color: #9DB4C9;'> {msg}</h3>", unsafe_allow_html=True)
-                    time.sleep(4.5)
+                    loader_html = f"""
+                        <style>
+                        @keyframes spin {{
+                            0% {{ transform: rotate(0deg); }}
+                            100% {{ transform: rotate(360deg); }}
+                        }}
+                        .custom-loader {{
+                            border: 3px solid #f3f3f3;  
+                            border-radius: 50%;
+                            border-top: 3px solid #2E86C1;
+                            width: 22px;  
+                            height: 22px;
+                            -webkit-animation: spin 1s linear infinite;
+                            animation: spin 1s linear infinite;
+                        }}
+                        .loading-container {{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 10px; 
+                        }}
+                        .loading-text {{
+                            color: #9DB4C9;
+                            margin: 0;
+                            font-size: 18px; 
+                            font-weight: 500; 
+                        }}
+                        </style>
+                        
+                        <div class="loading-container">
+                            <div class="custom-loader"></div>
+                            <div class="loading-text">{msg}</div>
+                        </div>
+                    """
+                    
+                    status_text.markdown(loader_html, unsafe_allow_html=True)
+                    time.sleep(10)
+                    
                     if future.done():
                         break
                 result = future.result()
