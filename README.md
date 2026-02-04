@@ -76,7 +76,7 @@ PDF Generator
 
 ---
 
-💻 Installation
+Installation
 
 ```bash
 python -m venv venv
@@ -93,7 +93,7 @@ Create a `.env` file:
 GROQ_API_KEY=your_groq_api_key_here
 ```
 ---
-## ⚙️ Tech Stack
+## Tech Stack
 
 - Python  
 - CrewAI  
