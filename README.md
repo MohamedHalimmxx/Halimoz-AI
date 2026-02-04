@@ -136,13 +136,12 @@ Formats real outputs into a professional PDF.
 video-intelligence-summarizer/
 ├── app.py
 ├── crew.py
-├── agents.py
-├── tasks.py
-├── llm.py
+├── main.py
 ├── tools/
 │   ├── video_tool.py
 │   ├── whisper_tool.py
 │   ├── pdf_tool.py
+│   ├── transcribt_tool.py
 ├── requirements.txt
 ├── .env.example
 └── README.md
