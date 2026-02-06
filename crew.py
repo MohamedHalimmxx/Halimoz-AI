@@ -44,8 +44,8 @@ summary_agent = Agent(
 def run_crew(video_url: str):
 
     script_task = Task(
-        description=f"Use fetch_transcript to get full transcript from {video_url}",
-        expected_output="Raw transcript text",
+        description=f"Use fetch_transcript to extract full transcript from {video_url}",
+        expected_output="Only the raw text of the video transcript, without any introductory or explanatory remarks.",
         agent=script_agent
     )
 
