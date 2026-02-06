@@ -54,7 +54,7 @@ Each agent has a dedicated responsibility:
 • PDF Export  
 Generates a clean, well-structured PDF based on real agent outputs.
 
-• ChatGPT-like UI  
+• Modern UI  
 Modern interface with loading states and conversation flow.
 
 • Arabic & English Support  
