@@ -89,4 +89,3 @@ def run_crew(video_url: str):
     }
 
 
-#streamlit run app.py
